@@ -1,3 +1,4 @@
+import 'package:app_divisao/modules/create_split/widgets/step_input_money.dart';
 import 'package:app_divisao/modules/create_split/widgets/step_input_text.dart';
 import 'package:app_divisao/modules/create_split/widgets/step_title.dart';
 import 'package:flutter/material.dart';
@@ -35,10 +36,12 @@ class _StepTreePageState extends State<StepTreePage> {
                 ),
               ),
               Expanded(
-                child: StepInputText(
+                child: StepInputMoney(
                   padding: EdgeInsets.zero,
-                  onChange: (value) {},
-                  hintText: "R\S 0,00",
+                  onChange: (value) {
+                    print(value);
+                  },
+                  hintText: "R\$ 0,00",
                   align: TextAlign.start,
                 ),
               ),
