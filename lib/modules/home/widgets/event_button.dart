@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:app_divisao/modules/home/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -63,67 +61,73 @@ class EventButtonWidget extends StatelessWidget {
         ),
       );
     } else {
-      return Container(
-        padding: const EdgeInsets.only(left: 24, right: 24, top: 0, bottom: 16),
-        child: Row(
-          children: [
-            IconDolarWidget(type: type),
-            SizedBox(width: 16),
-            Expanded(
-              child: Container(
-                padding: EdgeInsets.only(bottom: 10, top: 12),
-                decoration: BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(
-                      width: 1,
-                      color: Color(0xFFCCCCCC),
+      return GestureDetector(
+        onTap: () {
+          Navigator.pushNamed(context, "/members_itens");
+        },
+        child: Container(
+          padding:
+              const EdgeInsets.only(left: 24, right: 24, top: 0, bottom: 16),
+          child: Row(
+            children: [
+              IconDolarWidget(type: type),
+              SizedBox(width: 16),
+              Expanded(
+                child: Container(
+                  padding: EdgeInsets.only(bottom: 10, top: 12),
+                  decoration: BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(
+                        width: 1,
+                        color: Color(0xFFCCCCCC),
+                      ),
                     ),
                   ),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            model.title!,
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 1,
-                            softWrap: false,
-                            style: AppTheme.textStyles.eventTileTitle,
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            model.created.toString(),
-                            style: AppTheme.textStyles.eventTileSubtitle,
-                          ),
-                        ],
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              model.title!,
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 1,
+                              softWrap: false,
+                              style: AppTheme.textStyles.eventTileTitle,
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              model.created.toString(),
+                              style: AppTheme.textStyles.eventTileSubtitle,
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    SizedBox(width: 5),
-                    Container(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Text(
-                            "R\$ ${model.value}",
-                            style: AppTheme.textStyles.eventTitleMoney,
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            "${model.people} amigo${model.people == 1 ? '' : 's'}",
-                            style: AppTheme.textStyles.eventTilePeople,
-                          ),
-                        ],
+                      SizedBox(width: 5),
+                      Container(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Text(
+                              "R\$ ${model.value}",
+                              style: AppTheme.textStyles.eventTitleMoney,
+                            ),
+                            SizedBox(height: 10),
+                            Text(
+                              "${model.people} amigo${model.people == 1 ? '' : 's'}",
+                              style: AppTheme.textStyles.eventTilePeople,
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       );
     }

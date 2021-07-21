@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 abstract class AppColors {
   Color get backgroundSecondary;
   Color get backgroundPrimary;
+  Color get backgroundLight;
   Color get title;
   Color get buttom;
   Color get border;
@@ -35,6 +36,9 @@ class AppColorDefault implements AppColors {
 
   @override
   Color get backgroundSecondary => Color(0xFF40B38C);
+
+  @override
+  Color get backgroundLight => Color(0xFFE5E5E5);
 
   @override
   Color get title => Color(0xFF40B28C);

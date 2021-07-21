@@ -18,7 +18,6 @@ abstract class _LoginControllerBase with Store {
   Future<void> googleSignIn() async {
     try {
       state = LoginStateLoading();
-
       final user = await service.googleSignIn();
       state = LoginStateSuccess(user: user);
     } catch (error) {

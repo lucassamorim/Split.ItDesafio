@@ -8,6 +8,8 @@ abstract class AppTextStyles {
   TextStyle get title;
   TextStyle get buttom;
   TextStyle get titleAppBar;
+  TextStyle get titleAppBarMembersItens;
+  TextStyle get titleMembersItens;
   TextStyle get titleBtnAppBar;
   TextStyle get eventTileTitle;
   TextStyle get eventTileSubtitle;
@@ -23,6 +25,10 @@ abstract class AppTextStyles {
   TextStyle get textField;
   TextStyle get personTileTitle;
   TextStyle get personTileTitleSelected;
+  TextStyle get paidMember;
+  TextStyle get msgPaidMember;
+  TextStyle get payMember;
+  TextStyle get msgPayMember;
 }
 
 class AppTextStylesDefault implements AppTextStyles {
@@ -41,6 +47,11 @@ class AppTextStylesDefault implements AppTextStyles {
   TextStyle get titleAppBar => GoogleFonts.montserrat(
       fontSize: 24, fontWeight: FontWeight.w700, color: Color(0xFFFFFFFF));
 
+  @override
+  TextStyle get titleAppBarMembersItens => GoogleFonts.montserrat(
+      fontSize: 24, fontWeight: FontWeight.w700, color: Color(0xFF455250));
+
+  @override
   TextStyle get titleBtnAppBar =>
       GoogleFonts.inter(fontSize: 14, color: Color(0xFF666666));
 
@@ -140,5 +151,39 @@ class AppTextStylesDefault implements AppTextStyles {
         color: AppTheme.colors.personTitleSelected,
         fontSize: 16,
         fontWeight: FontWeight.w700,
+      );
+
+  @override
+  TextStyle get paidMember => GoogleFonts.roboto(
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
+        color: AppTheme.colors.backgroundSecondary,
+      );
+
+  @override
+  TextStyle get payMember => GoogleFonts.roboto(
+      fontSize: 16,
+      fontWeight: FontWeight.w600,
+      color: AppTheme.colors.iconRemove);
+
+  @override
+  TextStyle get msgPaidMember => GoogleFonts.roboto(
+        fontSize: 14,
+        fontWeight: FontWeight.w400,
+        color: AppTheme.colors.backgroundSecondary,
+      );
+
+  @override
+  TextStyle get msgPayMember => GoogleFonts.roboto(
+        fontSize: 14,
+        fontWeight: FontWeight.w400,
+        color: AppTheme.colors.iconRemove,
+      );
+
+  @override
+  TextStyle get titleMembersItens => GoogleFonts.roboto(
+        fontSize: 16,
+        fontWeight: FontWeight.w700,
+        color: AppTheme.colors.eventTileTitle,
       );
 }
