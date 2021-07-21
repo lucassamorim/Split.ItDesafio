@@ -29,7 +29,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final UserModel user =
         ModalRoute.of(context)!.settings.arguments as UserModel;
-    print(user.email);
     return Scaffold(
       body: CustomScrollView(
         slivers: [
